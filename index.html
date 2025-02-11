@@ -3,40 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday, [Her Name]!</title>
+  <title>Happy Birthday, My Love!</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
-    <header>
-      <h1>Happy Birthday, [Her Name]! 🎉</h1>
-      <p>You mean the world to me, and I’m so grateful to have you in my life. Here’s to many more amazing years together!</p>
+    <header id="header">
+      <h1>Happy Birthday, My Love! 🎉</h1>
+      <p>To unlock your special message, please enter your birthday (MM/DD/YYYY):</p>
+      <input type="text" id="passwordInput" placeholder="MM/DD/YYYY">
+      <button id="unlockButton">Unlock Message</button>
     </header>
 
-    <section class="gallery">
-      <h2>Our Beautiful Memories</h2>
-      <div class="photos">
-        <img src="photo1.jpg" alt="Our Memory 1">
-        <img src="photo2.jpg" alt="Our Memory 2">
-        <img src="photo3.jpg" alt="Our Memory 3">
-        <!-- Add more images as needed -->
-      </div>
-    </section>
+    <div id="envelope" class="envelope">
+      <div class="flap"></div>
+      <div class="body"></div>
+    </div>
 
-    <section class="message">
-      <h2>A Special Message for You</h2>
-      <p>
-        Dear [Her Name],<br><br>
-        On your special day, I want you to know how much I love and appreciate you. You make every day brighter, and I’m so lucky to call you my wife. Here’s to celebrating you today and always!<br><br>
-        With all my love,<br>
-        [Your Name]
-      </p>
-    </section>
+    <div id="messageContainer" class="hidden">
+      <div class="message-and-photo">
+        <div class="message">
+          <h2>Happy Birthday, My Love!</h2>
+          <p>
+            Dear Zee,<br><br>
+            On this special day, I want to take a moment to tell you just how much you mean to me and our boys. Every single day, I watch in awe as you pour your heart and soul into being the incredible mother and wife that you are. The love, patience, and sacrifice you give to our family do not go unnoticed. I see it in the way you care for our sons Ziyad and our twins Zayn and Zayed, guiding them with warmth and wisdom, and in the way you stand beside me through every challenge and triumph.<br><br>
+            Raising three boys, including our twins, is no small feat, yet you do it with so much grace, strength, and unwavering love. I know it’s not always easy, but you never complain. You just give, nurture, and love endlessly. I deeply respect and admire the woman you are, and I feel so blessed to walk this journey of life with you.<br><br>
+            Thank you for being the heart of our home, for being my partner, my best friend, and the most wonderful mother to our boys. You are the glue that holds us together, and today, we celebrate you, the beautiful soul who makes our lives so full of love and joy.<br><br>
+            Happy birthday, my love! May this year bring you as much happiness as you bring to all of us. May we also survive all the trials and tribulations we face. We love you more than words can ever express. ❤️<br><br>
+            With all my love,<br>
+            Abu Ziyad
+          </p>
+        </div>
+        <img src="her-photo.jpg" alt="Her Photo" class="photo">
+      </div>
+    </div>
 
     <footer>
-      <p>Made with ❤️ by [Your Name]</p>
+      <p>Made with ❤️ by Abu Ziyad</p>
     </footer>
   </div>
+
+  <audio id="backgroundMusic" loop>
+    <source src="youre-still-the-one.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
   <script src="script.js"></script>
 </body>

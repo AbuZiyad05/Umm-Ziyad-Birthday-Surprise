@@ -1,6 +1,7 @@
+/* General Styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffebf3; /* Light pink background */
   color: #333;
   margin: 0;
   padding: 0;
@@ -14,8 +15,9 @@ body {
 }
 
 header h1 {
-  font-size: 2.5rem;
-  color: #e91e63;
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem;
+  color: #e91e63; /* Dark pink */
 }
 
 header p {
@@ -23,51 +25,144 @@ header p {
   color: #555;
 }
 
-.gallery {
-  margin: 40px 0;
+input {
+  padding: 10px;
+  font-size: 1rem;
+  margin: 10px 0;
+  border: 2px solid #e91e63;
+  border-radius: 5px;
 }
 
-.gallery h2 {
-  font-size: 2rem;
-  color: #e91e63;
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #e91e63;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.photos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
+button:hover {
+  background-color: #d81b60;
 }
 
-.photos img {
+/* Envelope Animation */
+.envelope {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  margin: 50px auto;
+  background-color: #ff7eb9; /* Pink envelope */
+  border-radius: 10px;
+  cursor: pointer;
+  perspective: 1000px; /* For 3D effect */
+}
+
+.flap {
+  position: absolute;
+  top: -50px;
+  left: 0;
   width: 100%;
-  max-width: 300px;
-  height: auto;
+  height: 50px;
+  background-color: #ff7eb9;
+  border-radius: 10px 10px 0 0;
+  transform-origin: top;
+  transition: transform 0.8s ease;
+}
+
+.body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ff7eb9;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Message and Photo Layout */
+#messageContainer {
+  display: none; /* Hidden by default */
+  margin-top: 50px;
+  text-align: left; /* Align text to the left */
+}
+
+.message-and-photo {
+  display: flex; /* Use flexbox for side-by-side layout */
+  align-items: flex-start; /* Align items at the top */
+  gap: 20px; /* Space between the message and photo */
+}
+
 .message {
-  margin: 40px 0;
+  flex: 1; /* Take up remaining space */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .message h2 {
+  font-family: 'Dancing Script', cursive;
   font-size: 2rem;
   color: #e91e63;
 }
 
 .message p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.6;
-  text-align: left;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-footer {
-  margin-top: 40px;
-  font-size: 0.9rem;
-  color: #777;
+.photo {
+  width: 300px; /* Fixed width for the photo */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Confetti Animation */
+@keyframes fall {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(100vh); }
+}/* Fade-in Animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#messageContainer {
+  display: none; /* Hidden by default */
+  margin-top: 50px;
+  text-align: left; /* Align text to the left */
+  animation: fadeIn 1.5s ease-in-out; /* Fade-in animation */
+}
+
+.message-and-photo {
+  display: flex; /* Use flexbox for side-by-side layout */
+  align-items: flex-start; /* Align items at the top */
+  gap: 20px; /* Space between the message and photo */
+}
+
+.message {
+  flex: 1; /* Take up remaining space */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0; /* Start with 0 opacity */
+  animation: fadeIn 1.5s ease-in-out 0.5s forwards; /* Fade-in with delay */
+}
+
+.photo {
+  width: 300px; /* Fixed width for the photo */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0; /* Start with 0 opacity */
+  animation: fadeIn 1.5s ease-in-out 0.5s forwards; /* Fade-in with delay */
 }
